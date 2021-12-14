@@ -34,8 +34,8 @@ namespace ParallelHomeWork
 
         public static List<int> ExtractNumbers(this string str)
         {
-            string tmp = new string(str.Where(c => Char.IsDigit(c) || c == ' ').ToArray());
-            var list = tmp.Split(' ').Where(s => s != "").ToArray();
+            string tmp = new string(str.Where(c => Char.IsDigit(c) || c == ' ' || c == '\n').ToArray());
+            var list = tmp.Split(' ', '\n').Where(s => s != "").ToArray();
             List<int> result = new List<int>();
             foreach (var item in list)
             {
